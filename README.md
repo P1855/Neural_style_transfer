@@ -100,13 +100,13 @@ In this project, first, all the environment for loading content image and style 
 The model was fed with an **input video** which the model took each frame as a content image and stylized it to an output video using the style image.
 
 
-Test video 
+**Test video** 
 
 
 https://github.com/P1855/Neural_style_transfer/assets/98693127/37a85ed1-61f7-4791-8060-c6c42cf8aef5
 
 
-[Output Video](https://drive.google.com/file/d/15_7hOyFj7qqFm8gMihGR90Ms14efsTvv/view?usp=sharing)
+**[Output Video](https://drive.google.com/file/d/15_7hOyFj7qqFm8gMihGR90Ms14efsTvv/view?usp=sharing)**
 
 
 The **real time fast neural style transfer** file uses the same tensorflow hub model and uses **webcam** to stylize the video captured. It can be used as *filter* for making videos.
