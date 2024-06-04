@@ -4,5 +4,6 @@ This project is based on fast style transfer using neural networks model from te
 Neural Style Transfer (NST) is a technique which combines two images (content image for the object of the image and the style image from which only the style is extracted) into a third target image.
 For exmaple - 
 
-<img src= "https://drive.google.com/file/d/1RiUmhDwe8BLsgMdlrZ2ZJnkBBIVsBUfR/view?usp=sharing"  height="60" width="60" >
+<img src= "https://drive.google.com/file/d/1RiUmhDwe8BLsgMdlrZ2ZJnkBBIVsBUfR/view?usp=sharing"  width=1000 >
+![Example- ]("https://drive.google.com/file/d/1RiUmhDwe8BLsgMdlrZ2ZJnkBBIVsBUfR/view?usp=sharing" "Title")
 
