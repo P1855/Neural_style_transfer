@@ -49,4 +49,55 @@ $$
 
 
 
+To calculate the **style loss** in neural style transfer (NST), we need a way to capture the artistic style of an image and measure the correlations between features at each layer. Gram matrices come to our rescue. Specifically:
 
+1. **Gram Matrix**:
+   - The Gram matrix (*G*) is computed for each layer.
+   - It encodes the correlations between feature maps.
+   - While the original NST paper uses the Gram matrix, other algorithms that disregard feature position can also be effective.
+   - In practice, the Gram matrix captures the essence of style by focusing on feature relationships.
+
+2. **Style Loss Equation**:
+   - The style loss is akin to computing the Maximum Mean Discrepancy (MMD) between two images.
+   - As long as the measure aligns with the MMD algorithm, the loss is appropriately computed.
+   - The total style loss combines mean-squared distances across layers (*E*) with weighted factors for each layer:
+
+$$
+\text{Style Loss} = \sum_{l} \frac{1}{4N_l^2 M_l^2} \sum_{i,j} (G_{ij}^l - A_{ij}^l)^2
+$$
+
+   - Here:
+     - *N_l* represents the number of feature maps in layer *l*.
+     - *M_l* denotes the spatial dimensions of the feature maps.
+     - *G* is the Gram matrix for the style image.
+     - *A* is the Gram matrix for the target image.
+     - The summation is over spatial dimensions (*i*, *j*) of the Gram matrices.
+
+By minimizing this style loss, we ensure that the target image captures the desired artistic style. 
+
+### The model
+
+
+In neural style transfer, we manipulate a pretrained model to extract features from images. We focus on convolutional layers and discard top layers. The process involves reconstructing target image features to match the desired style.
+
+
+## Description of the project
+
+### Requirements
+
+1. Tensorflow
+2. Tensorflow_Hub
+3. Matplotlib
+4. NumPy
+5. Open-CV
+
+In this project, first, all the environment for loading content image and style image were loaded. Then a [Tensorflow_hub model](https://tfhub.dev/google/magenta/arbitrary-image-stylization-v1-256/2) was used. The Content image and the syle image was feeded into the model which gave an output stylized image. Then multiple content images and style images were taken from the tensorflow tutorial and used to output some stylized images for demonstration purpose. 
+
+
+![3](https://github.com/P1855/Neural_style_transfer/assets/98693127/2c219f9d-4200-4bba-97bb-86cd3703c2d5)
+
+
+The model was fed with an **input video** which the model took each frame as a content image and stylized it to an output video using the style image.
+
+
+The **real time fast neural style transfer** file uses the same tensorflow hub model and uses **webcam** to stylize the video captured. It can be used as *filter* for making videos.
