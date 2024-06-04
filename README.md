@@ -110,3 +110,14 @@ https://github.com/P1855/Neural_style_transfer/assets/98693127/37a85ed1-61f7-479
 
 
 The **real time fast neural style transfer** file uses the same tensorflow hub model and uses **webcam** to stylize the video captured. It can be used as *filter* for making videos.
+
+
+**Webcam Test**
+
+
+
+https://github.com/P1855/Neural_style_transfer/assets/98693127/db74cb11-5358-4c63-8398-db046eeaaceb
+
+
+
+
